@@ -1,9 +1,13 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:travel_app_flutter/home/widgets/categories_widget.dart';
+import 'package:travel_app_flutter/home/widgets/creators_widget.dart';
+import 'package:travel_app_flutter/home/widgets/destinations_widget.dart';
+import 'package:travel_app_flutter/home/widgets/resturant_widgets.dart';
 import 'package:travel_app_flutter/home/widgets/search_field.dart';
 
 class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -37,15 +41,22 @@ class HomePage extends StatelessWidget {
                 Padding(
                     padding: const EdgeInsets.only(top: 50),
                   child: Container(
-                    decoration:  const BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(topLeft: Radius.circular(20), topRight: Radius.circular(20))
-                    ),
-                    child: Column(
-                      children: [
-                        
-                      ],
-                    ),
+
+                    child: Container(
+                        decoration:  const BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.only(topLeft: Radius.circular(20), topRight: Radius.circular(20))
+                        ),
+                        child: Column(
+                          children: const [
+                            DestinationWidgets(),
+                            ResturantWidget(),
+                            CreatorsWidget(),
+                            SizedBox(height: 40,)
+                          ],
+                        ),
+                      )
+
                   ),
                 )
             ]
